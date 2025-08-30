@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { CyberButton } from './ui/cyber-button';
+import { Menu, X } from 'lucide-react';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -19,6 +21,8 @@ const Navigation: React.FC = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Articles', href: '#articles' },
+    { name: 'Coding', href: '#coding-profiles' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -62,16 +66,19 @@ const Navigation: React.FC = () => {
                 />
               </motion.a>
             ))}
-            <CyberButton variant="outline" size="sm">
-              Hire Me
-            </CyberButton>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <CyberButton variant="ghost" size="icon">
-              ☰
-            </CyberButton>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="flex items-center space-x-4 md:hidden">
+            <ThemeToggle />
+            <motion.button
+              onClick={() => setIsOpen(!isOpen)}
+              className="glass-card p-2 rounded-lg"
+              whileTap={{ scale: 0.95 }}
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Cyberpunk Color Palette - Deep Space Theme */
+    /* Dark theme (default) */
     --space-black: 220 25% 5%;
     --space-dark: 220 20% 8%;
     --space-medium: 220 15% 15%;
@@ -24,7 +24,7 @@
     --glow-purple: 270 100% 65% / 0.3;
     --glow-pink: 320 100% 70% / 0.3;
     
-    /* Base Design System */
+    /* Base Design System - Dark */
     --background: var(--space-black);
     --foreground: 0 0% 95%;
     --card: var(--space-dark);
@@ -65,6 +65,49 @@
     --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    /* Light theme overrides */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 180 100% 25%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 270 95% 35%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 98%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 330 95% 35%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 180 100% 25%;
+
+    /* Light theme neon colors (darker for visibility) */
+    --neon-cyan: 180 100% 25%;
+    --neon-purple: 270 95% 35%;
+    --neon-pink: 330 95% 35%;
+    --neon-blue: 240 100% 35%;
+    --neon-green: 120 100% 35%;
+
+    /* Light theme gradient overrides */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 98%), hsl(210 40% 96%));
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.1);
   }
 }
 
